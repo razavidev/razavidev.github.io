@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RazaviDev | Blog Post</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+</head>
+
+
+<body id="top">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header">
+
+            <div class="row s-header__inner width-sixteen-col">
+
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="../index.html">
+                            <!-- <img src="images/logo.svg" alt="Homepage"> -->
+                            <h2>
+                                RazaviDev.</h2>
+                        </a>
+                    </div>
+
+                    <a class="s-header__menu-toggle" href="../#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
+
+                <nav class="s-header__nav">
+
+                    <ul class="s-header__menu-links">
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../blog.html">Journal</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul> <!-- s-header__menu-links -->
+
+                    <div class="s-header__contact">
+                        <a href="../contact.html" class="btn btn--primary s-header__contact-btn">Let's Work Together</a>
+                    </div> <!-- s-header__contact -->
+
+                </nav> <!-- end s-header__nav -->
+
+            </div> <!-- end s-header__inner -->
+
+        </header> <!-- end s-header -->
+
+
+        <!-- # site main content
+        ================================================== -->
+        <article id="content" class="s-content entry">
+
+            <div class="s-pageheader entry__header">
+                <div class="row">
+                    <div class="column xl-12">
+
+                        <h1 class="entry__title">
+                           PHP Tips and Tricks
+                        </h1> <!-- end entry__title -->
+
+                        <div class="entry__meta">
+                            <div class="entry__meta-date">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="7.25" stroke="currentColor" stroke-width="1.5"></circle>
+                                    <path stroke="currentColor" stroke-width="1.5" d="M12 8V12L14 14"></path>
+                                </svg>
+                                July 27, 2024
+                            </div>
+                            <div class="entry__meta-cat">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M19.25 17.25V9.75C19.25 8.64543 18.3546 7.75 17.25 7.75H4.75V17.25C4.75 18.3546 5.64543 19.25 6.75 19.25H17.25C18.3546 19.25 19.25 18.3546 19.25 17.25Z">
+                                    </path>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M13.5 7.5L12.5685 5.7923C12.2181 5.14977 11.5446 4.75 10.8127 4.75H6.75C5.64543 4.75 4.75 5.64543 4.75 6.75V11">
+                                    </path>
+                                </svg>
+                                <span class="cat-links">
+                                    <a href="../blog.html">Web Development</a>
+                                </span>
+                            </div>
+                        </div> <!-- end entry__meta -->
+
+                    </div>
+                </div>
+            </div> <!-- end entry__header -->
+
+            <div class="s-pagecontent entry__content">
+
+                <div class="row entry__primary width-narrower">
+                    <div class="column xl-12">
+                        <div class="crayons-article__body text-styles spec__body" data-article-id="636549"
+                            id="article-body">
+                            <p>Working with PHP has been one of the most fun experiences for me, working on both major
+                                and minor projects and learning something new on every journey.</p>
+
+                            <p>I'll be sharing some little tricks that have helped me cut down a couple of lines of code
+                                and others that totally flipped my workflow.
+
+                            Hit me up if you have any ideas, questions, comments... Without further ado, let's get
+                                into it.</p>
+
+                            <h2>
+                                Tip 1: (if and else)
+                            </h2>
+
+                            <p>You may have seen this before on tutorials or some other articles, but this is something
+                                really important I should mention, a bit in-depth. It's not wrong to use
+                                <code class="language-php">else</code> and <code class="language-php">else if</code> blocks in your code, in fact, they were made
+                                for use, however, in some cases, these blocks become redundant. Let's look at an
+                                example:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">function</span> <span class="n">output_gender</span><span class="p">(</span><span class="kt">bool</span> <span class="nv">$user_is_male</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$user_is_male</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"User is male"</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"User is female"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>In this case the output_gender function returns a set output based on
+                                <code class="language-php">$user_is_male</code> is true or false. When <code class="language-php">return</code> is used in a
+                                function, any code below the <code class="language-php">return</code> statement is totally ignored, so, if
+                                <code class="language-php">$user_is_male</code> is true, then the <code class="language-php">else</code> block will be ignored
+                                since a value is returned. With this concept, we can get rid of the <code class="language-php">else</code>
+                                block like this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">function</span> <span class="n">output_gender</span><span class="p">(</span><span class="kt">bool</span> <span class="nv">$user_is_male</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$user_is_male</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"User is male"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="s2">"User is female"</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>We know that the if statement won't run if the condition passed in is <code class="language-php">false</code>.
+                                This means it will skip straight to the "User is female" part.</p>
+
+                            <h2>
+                                Tip 2: (if blocks: less vs more)
+                            </h2>
+
+                            <p>Tip 2 builds upon the tip we just looked at above but goes in a bit deeper. In an if/else
+                                or even using an example like tip 1, you might have conditions where one block, either
+                                the if or else, has less code than the other. It's better in such situations to handle
+                                the block with less code first. Let's look at a real example.</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">public</span> <span class="k">function</span> <span class="n">categoryWithPosts</span><span class="p">(</span><span class="nv">$category</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$category</span> <span class="o">=</span> <span class="nc">Category</span><span class="o">::</span><span class="nf">find</span><span class="p">(</span><span class="nv">$category</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$category</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$category</span><span class="o">-&gt;</span><span class="n">posts</span> <span class="o">=</span> <span class="nv">$category</span><span class="o">-&gt;</span><span class="nf">posts</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">();</span>
+        <span class="k">return</span> <span class="nf">response</span><span class="p">([</span><span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="nv">$category</span><span class="p">],</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">response</span><span class="p">([</span><span class="s1">'error'</span> <span class="o">=&gt;</span> <span class="s1">'Category not found'</span><span class="p">],</span> <span class="mi">404</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>This code above checks for a post category and runs a condition based on whether the
+                                category is found or not. If we're to go with <strong>ONLY</strong> tip 1, we'll have
+                                code looking like this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">public</span> <span class="k">function</span> <span class="n">categoryWithPosts</span><span class="p">(</span><span class="nv">$category</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$category</span> <span class="o">=</span> <span class="nc">Category</span><span class="o">::</span><span class="nf">find</span><span class="p">(</span><span class="nv">$category</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$category</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$category</span><span class="o">-&gt;</span><span class="n">posts</span> <span class="o">=</span> <span class="nv">$category</span><span class="o">-&gt;</span><span class="nf">posts</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">();</span>
+        <span class="c1">// having any more code here would</span>
+        <span class="c1">// bloat this part of the function</span>
+        <span class="k">return</span> <span class="nf">response</span><span class="p">([</span><span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="nv">$category</span><span class="p">],</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nf">response</span><span class="p">([</span><span class="s1">'error'</span> <span class="o">=&gt;</span> <span class="s1">'Category not found'</span><span class="p">],</span> <span class="mi">404</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>This code is correct, however, you can clearly see that our major code is wrapped with
+                                <code class="language-php">{}</code>, and pushed in further. If this code were significantly longer, it would
+                                be a pain to keep it all within the if block. Following tip 2, we can have this instead:
+                            </p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">public</span> <span class="k">function</span> <span class="n">categoryWithPosts</span><span class="p">(</span><span class="nv">$category</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$category</span> <span class="o">=</span> <span class="nc">Category</span><span class="o">::</span><span class="nf">find</span><span class="p">(</span><span class="nv">$category</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$category</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">response</span><span class="p">([</span><span class="s1">'error'</span> <span class="o">=&gt;</span> <span class="s1">'Category not found'</span><span class="p">],</span> <span class="mi">404</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nv">$category</span><span class="o">-&gt;</span><span class="n">posts</span> <span class="o">=</span> <span class="nv">$category</span><span class="o">-&gt;</span><span class="nf">posts</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">published</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">();</span>
+    <span class="c1">// we can freely have more code here</span>
+    <span class="c1">// without worrying about the code looking weird</span>
+    <span class="k">return</span> <span class="nf">response</span><span class="p">([</span><span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="nv">$category</span><span class="p">],</span> <span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>Since the else block has less code, we use a negative statement with <code class="language-php">!</code> to
+                                make that code run first. So our if rather contains
+                                <code class="language-php">if not category, run code...</code>. This gives us more room to handle our major
+                                code freely.</p>
+
+                            <h2>
+                                Tip 3: (verifying multiple strings)
+                            </h2>
+
+                            <p>Let's just say we want to find if a certain variable is or isn't one of many strings,
+                                we'd obviously have to write a bunch of conditional statements to verify this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="nv">$item</span> <span class="o">=</span> <span class="s2">"candy"</span><span class="p">;</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s1">'candy'</span><span class="o">:</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s1">'toy'</span><span class="o">:</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// we're not adding break because we're using return</span>
+
+<span class="c1">// or</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$item</span> <span class="o">==</span> <span class="s1">'candy'</span> <span class="o">||</span> <span class="nv">$item</span> <span class="o">==</span> <span class="s1">'toy'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>This code returns <code class="language-php">false</code> if the item variable is neither <code class="language-php">candy</code>
+                                nor <code class="language-php">toy</code>. This is perfectly correct, however, this is very repetitive.
+                                Instead, we can check an array for the string we want to find: </p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span> <span class="p">[</span><span class="s2">"candy"</span><span class="p">,</span> <span class="s2">"toy"</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>Even this can be shortened further because <code class="language-php">in_array</code> returns a boolean.</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">return</span> <span class="nb">in_array</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span> <span class="p">[</span><span class="s2">"candy"</span><span class="p">,</span> <span class="s2">"toy"</span><span class="p">]);</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>We just shortened these lines to just a single line, clean right? How does this work? We
+                                have an array containing the strings we want to check for. Then we pass that into
+                                <code class="language-php">in_array</code>. This creates a simple condition like:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight plaintext"><code class="language-php">
+
+if $item is inside the array holding "candy" and "toy", return true, else false
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>You might be wondering, why not just return whether $item is candy or toy directly since
+                                that too is just one line, like this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">return</span> <span class="p">(</span><span class="nv">$item</span> <span class="o">==</span> <span class="s1">'candy'</span> <span class="o">||</span> <span class="nv">$item</span> <span class="o">==</span> <span class="s1">'toy'</span><span class="p">);</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>This will give us the same result, however let's say we were checking 10 strings:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">return</span> <span class="p">(</span><span class="nv">$letter</span> <span class="o">==</span> <span class="s1">'a'</span> <span class="o">||</span> <span class="nv">$letter</span> <span class="o">==</span> <span class="s1">'b'</span> <span class="o">||</span> <span class="nv">$letter</span> <span class="o">==</span> <span class="s1">'c'</span> <span class="o">||</span> <span class="nv">$letter</span> <span class="o">==</span> <span class="s1">'d'</span> <span class="mf">...</span><span class="p">);</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>You can clearly see that this easily gets out of hand, compared to this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">return</span> <span class="nb">in_array</span><span class="p">(</span><span class="nv">$letter</span><span class="p">,</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">,</span> <span class="mf">...</span><span class="p">]);</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p><strong>Note that the first parameter of <code class="language-php">in_array</code> is the string we're
+                                    actually checking</strong></p>
+
+                            <h2>
+                                Tip 4: (??)
+                            </h2>
+
+                            <p><code class="language-php">??</code> is probably the easiest way to create inline conditions without 2 parts.
+                                What do I mean? Let's look at an example, that would do all the explaining for me.</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"a"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"b"</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"c"</span> <span class="o">=&gt;</span> <span class="kc">null</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="k">return</span> <span class="nv">$data</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]</span> <span class="o">?</span> <span class="nv">$data</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]</span> <span class="o">:</span> <span class="s2">"No data"</span><span class="p">;</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>The last line here checks if the key <code class="language-php">c</code> in <code class="language-php">$data</code> is truthy, if
+                                not it returns "No data".</p>
+
+                            <p>We can rewrite the last line with ?? to look like this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="c1">// ...</span>
+<span class="k">return</span> <span class="nv">$data</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]</span> <span class="o">??</span> <span class="s2">"No data"</span><span class="p">;</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>In this case ?? behaves like the <code class="language-php">||</code> logical operator in other languages. A
+                                real-world example of this would look like this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="nv">$user</span> <span class="o">=</span> <span class="nf">getUserFromDb</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">)</span> <span class="o">??</span> <span class="nb">trigger_error</span><span class="p">(</span><span class="s2">"User id is invalid"</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$user</span><span class="p">;</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p><code class="language-php">getUserFromDb</code> is to return a user from a database somewhere, however, if the
+                                user isn't found, instead of setting the user variable, we break the application with
+                                <code class="language-php">trigger_error</code>. Without <code class="language-php">??</code> we'd have to write this instead:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="nv">$user</span> <span class="o">=</span> <span class="nf">getUserFromDb</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">trigger_error</span><span class="p">(</span><span class="s2">"User id is invalid"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nv">$user</span><span class="p">;</span>
+
+
+</code></pre>
+
+                            </div>
+                            <h2>
+                                Tip 5: (Recursiveness over repetition)
+                            </h2>
+
+                            <p>I think this tip is pretty straightforward, try to use recursiveness rather than
+                                repeating yourself a lot. There are situations that'll make you repeat some code, that's
+                                fine, but if you find you're repeating the same code, just make it a method. Where does
+                                recursiveness come in? Let's look at an example: This is a method I wrote for my <a
+                                    href="https://leafphp.netlify.app/#/" target="_blank" rel="noopener noreferrer">Leaf
+                                    framework</a>'s request object, to return a particular field passed into the
+                                request.</p>
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="cd">/**
+ * Returns request data
+ *
+ * This methods returns data passed into the request (request or form data).
+ * This method returns get, post, put patch, delete or raw faw form data or NULL
+ * if the data isn't found.
+ *
+ * @param string|array $params The parameter(s) to return
+ * @param bool $safeData Sanitize output
+ */</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>This means that this method can take in either an array or string and based on the input,
+                                it would return a string or an array. The solution would be to check if the input was an
+                                array, loop over it to get the strings in the array then perform the data fetch on those
+                                strings, which would look like this.</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">public</span> <span class="k">function</span> <span class="n">get</span><span class="p">(</span><span class="nv">$params</span><span class="p">,</span> <span class="kt">bool</span> <span class="nv">$safeData</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$params</span><span class="p">))</span> <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">body</span><span class="p">(</span><span class="nv">$safeData</span><span class="p">)[</span><span class="nv">$params</span><span class="p">]</span> <span class="o">??</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="nv">$data</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$params</span> <span class="k">as</span> <span class="nv">$param</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="nv">$param</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">body</span><span class="p">(</span><span class="nv">$safeData</span><span class="p">)[</span><span class="nv">$params</span><span class="p">]</span> <span class="o">??</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>Here, you notice <code class="language-php">$this-&gt;body($safeData)[$params] ?? null</code> is being
+                                repeated, not just that, but what if an array holding another array is passed in
+                                instead. Since this is a library, there's no telling what sorts of things users would
+                                pass in there, so I did this instead.</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">public</span> <span class="k">function</span> <span class="n">get</span><span class="p">(</span><span class="nv">$params</span><span class="p">,</span> <span class="kt">bool</span> <span class="nv">$safeData</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$params</span><span class="p">))</span> <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">body</span><span class="p">(</span><span class="nv">$safeData</span><span class="p">)[</span><span class="nv">$params</span><span class="p">]</span> <span class="o">??</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="nv">$data</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$params</span> <span class="k">as</span> <span class="nv">$param</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="nv">$param</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="nv">$param</span><span class="p">,</span> <span class="nv">$safeData</span><span class="p">);</span> <span class="c1">// I called the function again</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>This makes sure that until the looped value is a string, it won't attempt to fetch its
+                                data. A small trick compared to those above, but definitely useful. <strong>Note that
+                                    this function is class scoped, hence the use of <code class="language-php">$this</code></strong></p>
+
+                            <h2>
+                                Tip 6: (PHP + HTML)
+                            </h2>
+
+                            <p>This is for when you want to write PHP in your HTML or HTML in your PHP😅. We'd usually
+                                do something like:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="cp">&lt;?php</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$items</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s1">'
+        &lt;div class="product__card"&gt;
+            &lt;h3&gt;{$item-&gt;name}&lt;/h3&gt;
+        &lt;/div&gt;
+    '</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>Although this is fine, you can clearly see, we're outputting the HTML as a string. The
+                                bulkier the HTML, the more stressful it becomes to match tags and keep track of exactly
+                                what part of the HTML we're writing is. There's a neat solution for this.</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$items</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"product__card"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>You can clearly see how we're maintaining our HTML formatting and code alignment...and
+                                no, this is not a templating engine, this is just PHP making things simple for us. One
+                                major thing about PHP is how it allows the same thing to be done in many different ways.
+                                In this example above, we're using:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">foreach</span> <span class="p">(</span><span class="mf">...</span><span class="p">)</span><span class="o">:</span>
+<span class="c1">// code</span>
+<span class="k">endforeach</span><span class="p">;</span>
+
+<span class="c1">// also works with if</span>
+<span class="k">if</span> <span class="p">(</span><span class="mf">...</span><span class="p">)</span><span class="o">:</span>
+<span class="c1">// code</span>
+<span class="k">endif</span><span class="p">;</span>
+
+<span class="c1">// also</span>
+<span class="k">if</span> <span class="p">(</span><span class="mf">...</span><span class="p">)</span> <span class="c1">#one line code</span>
+
+<span class="k">while</span><span class="p">()</span><span class="o">:</span>
+<span class="c1">// ...</span>
+<span class="k">endwhile</span><span class="p">;</span>
+
+
+</code></pre>
+
+                            </div>
+                            <h2>
+                                Tip 7: (Writing functional blocks)
+                            </h2>
+
+                            <p>Functional blocks can range from a large feature to a single lined wrapper, around a
+                                default PHP function, the point is just to create that functional block. This isn't just
+                                to avoid repetition, but also to speed up your workflow and make your code more
+                                readable.</p>
+
+                            <p>You can write a simple method to create a redirect like this:</p>
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">function</span> <span class="n">redirectTo</span><span class="p">(</span><span class="nv">$route</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s2">"location: </span><span class="nv">$route</span><span class="s2">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">302</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>So instead of writing <code class="language-php">header("location: /home", true, 302)</code> everytime, it
+                                makes more sense to write <code class="language-php">redirectTo("/home")</code>. The same applies to 3rd
+                                party libraries, and long processes, writing a reusable block of code in an open way eg:
+                            </p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="nc">UserNotification</span><span class="o">::</span><span class="nf">send</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">,</span> <span class="nv">$notification</span><span class="p">);</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>is obviously better than writing a bunch of lines every time you have to send a
+                                notification to a user. Another very small but very useful tip.</p>
+
+                            <h2>
+                                Tip 8: (Using Types)
+                            </h2>
+
+                            <p>Another straightforward one. This is one of the least used, but very powerful features
+                                available in PHP. This is a feature that can save you and other developers a whole lot
+                                of stress (if you work with a team).</p>
+
+                            <p>Of course, you can write function descriptions like the example in tip 5 above, but it
+                                becomes quite a daunting task to write function descriptions for all your functions and
+                                variables in a large project.</p>
+
+                            <p>Let's take a look at how types can save our lives later:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">function</span> <span class="n">getItem</span><span class="p">(</span><span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// $item is expected to be an array</span>
+    <span class="c1">// for whatever reason</span>
+    <span class="k">return</span> <span class="nf">allItems</span><span class="p">()[</span><span class="nv">$item</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>If a different developer works on the project or even yourself after a few weeks, seeing
+                                the <code class="language-php">getItem</code> method, the <code class="language-php">$item</code> variable there is obviously
+                                expected to be a string, but the function was written to handle an array.</p>
+
+                            <p>The dangerous thing here is that passing in a string won't break the app, it would still
+                                run perfectly. Why?</p>
+
+                            <p>If "chair" is passed into the function, it will be evaluated to
+                                <code class="language-php">allItems()["c"]</code>, which will end up causing errors that will keep you up at
+                                12am😅. This can easily be avoided like this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">function</span> <span class="n">getItem</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nf">allItems</span><span class="p">()[</span><span class="nv">$item</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>This will make sure that whatever is passed in here is the type needed. You can read more
+                                from php.net</p>
+
+                            <p>You can also use methods like <code class="language-php">is_string</code> and <code class="language-php">is_array</code> which we
+                                saw above like this:</p>
+
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="k">function</span> <span class="n">getItem</span><span class="p">(</span><span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$item</span><span class="p">))</span> <span class="nf">throwErr</span><span class="p">(</span><span class="s2">"item should be array"</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nf">allItems</span><span class="p">()[</span><span class="nv">$item</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+                            <h2>
+                                Tip 9: (Frameworks/Libraries aren't evil)
+                            </h2>
+
+                            <p>I'll be real over here, open-source libraries cause problems! Sometimes the libraries we
+                                bring in cause more problems for us instead of helping us. This might sound like I'm
+                                totally trashing open source packages, I'm not, I also write open-source packages
+                                myself, so obviously not!</p>
+
+                            <p>My point is that you should read more on packages you bring in, read their documentation,
+                                check their issues on GitHub, don't take unnecessary risks. One thing I'll advise, and
+                                that goes back to <strong>Tip 7</strong>, write wrappers for features around the
+                                packages you bring in. This will give you a bit more control and also make your code
+                                cleaner.</p>
+
+                            <p>In regards to frameworks, you might have heard this before, but you should familiarize
+                                yourself with PHP first. PHP frameworks, no matter the language they were written in
+                                still use PHP's principles and style, so the first step is to obviously familiarize
+                                yourself with PHP.</p>
+
+                            <p>Next would be to pick something you're comfortable with and stick to it. There are many
+                                choices out there:</p>
+
+                            <ul>
+                                <li>Laravel: if you love magic, laravel does literally everything for you (unless you
+                                    decide otherwise)</li>
+                                <li>Slim: A rest API framework, has a sort of "bring your own" vibe</li>
+                                <li>Leaf: That's what I wrote, inspired by Slim and Laravel, it gives you the magic you
+                                    can control.</li>
+                            </ul>
+
+                            <p><em>I only mentioned frameworks I actually use to avoid bias.</em></p>
+                            <h2>
+                                Tip 10: (Don't just code!)
+                            </h2>
+
+                            <p>Alright, this one is a bonus tip. It applies to not just PHP, but technically almost
+                                every language/framework you work with. What I mean by don't just code is relatively
+                                straightforward.</p>
+
+                            <p>Let's say you want to write a method that sort of requests a payment from a user's
+                                account, jumping straight into coding out this feature may (or may not) end up getting
+                                you confused at some point, where you'll have to stop, scroll back up, check something
+                                from a file somewhere, or something similar.</p>
+
+                            <p>What am I proposing? Here:</p>
+                            <div class="highlight js-code-highlight">
+                                <pre class="highlight php"><code class="language-php">
+
+<span class="c1">// in class scope</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">requestPayout</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// parse token to get user id</span>
+
+    <span class="c1">// fetch user from DB with id</span>
+
+    <span class="c1">// check if the user is eligible for payouts</span>
+
+    <span class="c1">// get user balance with user helper</span>
+
+    <span class="c1">// check and throwErr for insufficient funds</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+
+</code></pre>
+
+                            </div>
+
+                            <p>The above just allows you to do all the required thinking before actually jumping in to
+                                write any features. It also in a way helps you cross-check what you're building since
+                                you'll end up listing out all your processes out first.</p>
+
+                            <h3>
+                                Thanks for reading
+                            </h3>
+
+                            <p>These are a few tips and tricks I've discovered on my PHP journey, some of these might
+                                work for you and others may not, feel free to choose whichever you're comfortable with
+                                and stick to those.</p>
+
+                            <p>It's quite wrong to say these are good ways of doing stuff so use these only, as I
+                                mentioned before, PHP is the type of language that provides many different ways of doing
+                                the same thing, so if you have anything you'll like to share, a new tip, a faster way to
+                                do something I mentioned, something you don't agree with, just reach out to me.</p>
+
+
+                        </div>
+                    </div>
+                </div> <!-- end entry__primary -->
+
+            </div> <!-- end entry__content -->
+
+        </article> <!-- s-content entry-->
+
+
+        <!-- # cta
+        ================================================== -->
+        <section id="cta" class="s-cta">
+
+            <div class="row row-x-center text-center">
+                <div class="column xl-8 lg-12">
+                    <div class="s-cta__content">
+                        <h2 class="text-display-title">
+                            Get started with a consultation today.
+                        </h2>
+                        <p class="lead">
+                            Ready to discuss your project vision, an innovative idea, or a specific inquiry? I welcome
+                            your message. Click the button below to send an email and let's begin building something
+                            remarkable.
+                        </p>
+                        <a href="../mailto:m.razavi.dev@gmail.com" class="btn btn--primary">Send an E-mail</a>
+                    </div>
+                </div>
+            </div>
+
+        </section> <!-- end s-cta -->
+
+        <!-- # footer 
+        ================================================== -->
+        <footer class="s-footer">
+            <div class="row s-footer__content">
+                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">
+                    <h3>About RazaviDev</h3>
+                    <p>
+                        I am Mortaza Razavi, professionally known as RazaviDev, a Full Stack Software Engineer based in
+                        Kabul, Afghanistan. For all professional inquiries and social media interactions, please refer
+                        to me as RazaviDev. You can connect with me directly via my Github or find me on various social
+                        media platforms at @RazaviDev. I regularly share
+                        in-depth tutorials, valuable insights, and discussions on Programming, Software Engineering, and
+                        Algorithms.
+                    </p>
+                </div>
+                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
+                    <h3>Site Links</h3>
+                    <ul class="link-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Journal</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <!-- <li><a href="../https://www.dreamhost.com/r.cgi?287326">DreamHost</a></li> -->
+                    </ul>
+                </div>
+                <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter">
+                    <h3>Newsletter</h3>
+                    <p>
+                        Subscribe to my newsletter to stay ahead with the latest articles on software engineering, plus
+                        exclusive personal tips and insights. Don't miss out join the community today!
+                    </p>
+
+                    <div class="subscribe-form">
+                        <form id="mc-form" class="mc-form" novalidate="true">
+                            <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center"
+                                placeholder="Your Email Address"
+                                title="The domain portion of the email address is invalid (the portion after the @)."
+                                pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+                                required="">
+                            <input type="submit" name="subscribe" value="Subscribe"
+                                class="btn btn--primary btn--small u-fullwidth">
+                            <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
+                            <div class="mc-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row s-footer__bottom">
+                <div class="column xl-6 lg-12">
+                    <ul class="s-footer__social social-list">
+                        <li>
+                            <a href="../https://github.com/razavidev">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
+                                    <path
+                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                                    </path>
+                                </svg>
+                                <span class="u-screen-reader-text">Github</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../https://twitter.com/razavidev">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
+                                    <path
+                                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                    </path>
+                                </svg>
+                                <span class="u-screen-reader-text">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../https://t.me/razavidev">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
+                                    <path
+                                        d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z">
+                                    </path>
+                                </svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                    </ul> <!-- end s-footer__social -->
+                </div>
+                <div class="column xl-6 lg-12">
+                    <p class="ss-copyright">
+                        <span>© Copyright RazaviDev
+                            <script>document.write(new Date().getFullYear())</script>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="ss-go-top">
+                    <a class="smoothscroll" title="Back to Top" href="../#top">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none"
+                            stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!
+                            Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0)
+                            Copyright 2021 Atomicons --&gt;<polyline points="17 11 12 6 7 11"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="6"></line>
+                        </svg>
+                    </a>
+                </div> <!-- end ss-go-top -->
+            </div>
+
+        </footer> <!-- end s-footer -->
+
+    </div> <!-- end page-wrap -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>
