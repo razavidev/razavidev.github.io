@@ -12,9 +12,9 @@
 
     <!-- SEO / discoverability
     ================================================== -->
-    <meta name="description" content="A practical guide to speeding up WordPress: update core and plugins, delete unused plugins, drop third-party widgets, optimise images, add caching and more.">
+    <meta name="description" content="A hands-on guide to making WordPress faster: keep core and plugins current, remove the unused ones, drop third-party widgets, compress images and layer in caching.">
     <!-- meta keywords: Google no longer uses these, but Bing/Yandex and some AI agents still read them -->
-    <meta name="keywords" content="optimize WordPress, speed up WordPress, WordPress performance, WordPress caching, Varnish, image optimization, remove plugins, WordPress tutorial">
+    <meta name="keywords" content="WordPress speed optimization, speed up WordPress, WordPress caching, WP Super Cache, Varnish caching, image compression, Smush plugin, WordPress performance">
     <meta name="author" content="Mortaza Razavi (RazaviDev)">
     <link rel="canonical" href="https://razavidev.github.io/blog/lets-optimize-a-wordpress-website.html">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -24,7 +24,7 @@
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="RazaviDev">
     <meta property="og:title" content="How to Speed Up &amp; Optimize a WordPress Website | RazaviDev">
-    <meta property="og:description" content="A practical guide to speeding up WordPress: update core and plugins, delete unused plugins, drop third-party widgets, optimise images, add caching and more.">
+    <meta property="og:description" content="A hands-on guide to making WordPress faster: keep core and plugins current, remove the unused ones, drop third-party widgets, compress images and layer in caching.">
     <meta property="og:url" content="https://razavidev.github.io/blog/lets-optimize-a-wordpress-website.html">
     <meta property="og:image" content="https://razavidev.github.io/images/thumbs/single/standard-1200.jpg">
     <meta property="og:image:width" content="1200">
@@ -39,7 +39,7 @@
     ================================================== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How to Speed Up &amp; Optimize a WordPress Website | RazaviDev">
-    <meta name="twitter:description" content="A practical guide to speeding up WordPress: update core and plugins, delete unused plugins, drop third-party widgets, optimise images, add caching and more.">
+    <meta name="twitter:description" content="A hands-on guide to making WordPress faster: keep core and plugins current, remove the unused ones, drop third-party widgets, compress images and layer in caching.">
     <meta name="twitter:image" content="https://razavidev.github.io/images/thumbs/single/standard-1200.jpg">
     <meta name="twitter:image:alt" content="Let's Optimize a WordPress Website">
 
@@ -54,7 +54,7 @@
       },
       "url": "https://razavidev.github.io/blog/lets-optimize-a-wordpress-website.html",
       "headline": "Let's Optimize a WordPress Website",
-      "description": "A practical guide to speeding up WordPress: update core and plugins, delete unused plugins, drop third-party widgets, optimise images, add caching and more.",
+      "description": "A hands-on guide to making WordPress faster: keep core and plugins current, remove the unused ones, drop third-party widgets, compress images and layer in caching.",
       "image": "https://razavidev.github.io/images/thumbs/single/standard-1200.jpg",
       "datePublished": "2024-02-09T00:00:00+00:00",
       "dateModified": "2024-02-09T00:00:00+00:00",
@@ -71,7 +71,7 @@
         "url": "https://razavidev.github.io/"
       },
       "articleSection": "Web Development",
-      "keywords": "optimize WordPress, speed up WordPress, WordPress performance, WordPress caching, Varnish, image optimization, remove plugins, WordPress tutorial",
+      "keywords": "WordPress speed optimization, speed up WordPress, WordPress caching, WP Super Cache, Varnish caching, image compression, Smush plugin, WordPress performance",
       "inLanguage": "en"
     }
     </script>
@@ -199,84 +199,85 @@
                     <div class="column xl-12">
 
                         <div>
-                            Optimizing a WordPress Website can be challenging, specially if you use lots of plugins and
-                            a heavy theme. but don't worry as in this article we will explore the best ways to optimize
-                            your WordPress website like it took a warm bath !
+                            Whipping a WordPress site into shape isn’t always easy, particularly once you’ve piled on
+                            a mountain of plugins and a heavyweight theme. The good news? This article walks you
+                            through the most effective ways to slim things down, so your site ends up feeling light
+                            and refreshed.
 
-                            The following section is simple steps to take before adding additional software and plugins.
-                            Skip ahead to the next section if you’ve taken stock on your current WordPress set-up.<br>
+                            Everything below covers the basic housekeeping you should do before installing yet more
+                            software and plugins. If you’ve already audited your current WordPress setup, feel free to
+                            jump ahead to the next part.<br>
                             <br>
                             <br>
-                            <strong>Upgrade Your WordPress</strong>: Always make sure you have the latest and greatest
-                            version of WordPress installed for your account. Every new version of WordPress should have
-                            software installed that optimizes your site faster than before.<br>
+                            <strong>Keep WordPress up to date</strong>: Make a habit of running the newest WordPress
+                            release available to your account. Each fresh version tends to ship with tweaks that make
+                            your site run faster than the one before it.<br>
                             <br>
                             <br>
-                            <strong>Update Your Plugins</strong>: You’re not done updating. It’s important to check your
-                            plugins with every new WordPress update. Separate them into two categories, ones you need
-                            and ones you don’t. Make sure the plugins you need are updated and working properly. Plugins
-                            you are not using should not just be turned off, but deleted completely. Rogue plugins can
-                            be tough on performance, so delete them from the plugins directory.<br>
+                            <strong>Refresh your plugins</strong>: The updating doesn’t stop with core. Every time
+                            WordPress ships a new version, go through your plugins too. Sort them into two piles:
+                            the ones you rely on and the ones you don’t. Confirm that the keepers are current and
+                            behaving correctly. Anything you’re no longer using shouldn’t simply be deactivated &mdash;
+                            remove it outright. Old, forgotten plugins drag on performance, so clear them out of the
+                            plugins directory.<br>
                             <br>
                             <br>
-                            <strong>Eliminate Third-Party Plugins</strong>: One of the easiest ways to speed up the
-                            website loading is to minimize third party services/widgets from being used on your blog.
-                            Some plug-ins may be needed, but try to substitute a non-local plug-in with a WordPress
-                            plug-in whenever possible. If the 3rd party site is loading slow, your site will look goofy
-                            by default.<br>
+                            <strong>Do away with third-party plugins</strong>: Trimming the third-party services and
+                            widgets embedded in your blog is one of the quickest wins for load times. A few of them may
+                            be essential, but wherever you can, swap a remotely hosted plugin for a native WordPress
+                            one. When an external service is slow, your whole site can end up looking broken.<br>
                             <br>
                             <br>
-                            <strong>Optimize Your Images</strong>: Image optimization is one of the most important
-                            aspects of speeding up your WordPress site. Large image files may be slowing down your site
-                            without you even knowing it as your pictures take a heavy tool on your site’s resources. The
-                            solution: smush them!<br>
+                            <strong>Shrink your images</strong>: Getting images right is among the single most
+                            impactful things you can do for WordPress speed. Oversized image files can quietly drag
+                            your site down, because every picture places a heavy demand on your server’s resources. The
+                            answer: compress them.<br>
                             <br>
-                            Check out the plugin Smush Image Compression and Optimization. This super plugin should be a
-                            default install on any site that needs optimized images. Smush strips meta data and
-                            optimizes compression for your JPEGs. It eliminates extra bytes that are useless, without
-                            compromising the quality of the image. Compress any image in any directory!<br>
+                            Take a look at the Smush Image Compression and Optimization plugin. It deserves to be
+                            installed by default on any site that cares about image weight. Smush strips out metadata
+                            and tightens JPEG compression, removing wasted bytes without visibly degrading the picture.
+                            You can compress an image sitting in any folder.<br>
                             <br>
-                            <strong>Place JavaScript at the Bottom</strong>: If your JavaScript is slow to load, make
-                            sure it’s at the bottom of the page so that the rest of the page will load first. You don’t
-                            want to have your JavaScript loaded first so users will see a blank page until JavaScript is
-                            fully connected.<br>
+                            <strong>Load JavaScript last</strong>: When your JavaScript is sluggish to load, keep it at
+                            the foot of the page so everything else renders first. Otherwise visitors are left staring
+                            at a blank screen until the JavaScript has fully connected.<br>
                             <div style="text-align: center;">
                                 <br>
                                 <strong>Cache is King</strong><br>
                                 &nbsp;
                             </div>
-                            When someone visits your website, a request is made for data off your web host’s server
-                            consisting of CSS, JavaScript, images, and so on. One way to speed up this process and
-                            enhance your server’s overall performance is to take advantage of caching.<br>
+                            Every time someone lands on your site, their browser requests data from your host’s server
+                            &mdash; CSS, JavaScript, images and more. Caching is one of the best levers for speeding
+                            that exchange up and easing the load on your server.<br>
                             <br>
-                            Caching means storing pages, images, and files on the local hard drive. Therefore, the next
-                            time a request is made, the cache is served to the user instead of reloading everything
-                            again, resulting in a speedier delivery. Different times of caching exist and need to be
-                            tended to for faster results:<br>
-                            <br>
-                            <br>
-                            <strong>WordPress Cache: </strong>WordPress allows caching plugins that create a static HTML
-                            page of every single one of your webpages, reducing page load time. There are many good
-                            plugins that do this, but we’re partial to WP Super Cache.<br>
-                            <br>
-                            WP Super Cache is the easiest to configure and free of charge. Some of these plugins are
-                            bloated and filled with ads; WP Super Cache is lightweight and ad-free. It works out of the
-                            box and can be tweaked by novices and experts alike. Once installed and operated, you should
-                            see an improvement immediately with the page loading tests, and the speed of both your
-                            customer facing pages and backend admin pages.<br>
+                            Put simply, caching stores pages, images and files on a local drive. The next time that
+                            same request arrives, the cached copy is handed over instead of rebuilding everything from
+                            scratch, which means faster delivery. Several flavours of caching exist, and each one needs
+                            attention if you want the best results:<br>
                             <br>
                             <br>
-                            <strong>Server Cache</strong>: For high traffic sites on VPS, dedicated, or cloud servers,
-                            it would be wise to look into server caching. This is the process of using a reverse proxy
-                            server in front of the server where WordPress is actually running. The WordPress codex gives
-                            a good definition of server caching:<br>
+                            <strong>WordPress cache: </strong>WordPress supports caching plugins that generate a
+                            static HTML copy of each of your pages, cutting down page load time. Plenty of plugins do
+                            this well, but our favourite is WP Super Cache.<br>
                             <br>
-                            The simplest solutions start with the server caching locally while more complex and involved
-                            systems may use multiple caching servers (also known as reverse proxy servers) “in front” of
-                            web servers where the WordPress application is actually running.<br>
+                            WP Super Cache is free and dead simple to set up. Where some alternatives are bloated and
+                            plastered with ads, WP Super Cache stays lean and ad-free. It runs straight out of the box
+                            and can be fine-tuned by beginners and veterans alike. Once it’s installed and active, you
+                            should notice a difference right away in page-loading tests, on both the public pages and
+                            the admin dashboard.<br>
                             <br>
-                            My server cache recommendation is <a href="https://www.varnish-cache.org/">Varnish
-                                Caching</a>. I’ll let Varnish explain what they do so well:<br>
+                            <br>
+                            <strong>Server cache</strong>: If your site deals with heavy traffic on a VPS, dedicated box
+                            or cloud server, it’s worth exploring server-level caching. That means placing a reverse
+                            proxy in front of the machine that actually runs WordPress. The WordPress codex describes
+                            server caching well:<br>
+                            <br>
+                            The most basic setups cache on the server itself, while more elaborate ones may lean on
+                            several caching servers — known as reverse proxy servers — positioned “in front” of
+                            web servers that run the WordPress application.<br>
+                            <br>
+                            My go-to for server caching is <a href="https://www.varnish-cache.org/">Varnish
+                                Caching</a>. Let Varnish describe what they do so well:<br>
                             <br>
                             <em>Varnish Cache is a web application accelerator also known as a caching HTTP reverse
                                 proxy. You install it in front of any server that speaks HTTP and
@@ -284,9 +285,8 @@
                                 It typically speeds up delivery with a factor of 300 – 1000x, depending on your
                                 architecture.</em><br>
                             <br>
-                            Once you have Varnish Caching installed, grab the free WordPress plugin Proxy Cache Purge
-                            plugin (formerly known as Varnish HTTP Purge). This will allow you to manually clear the
-                            cache whenever you would like.
+                            Once Varnish Caching is in place, add the free Proxy Cache Purge plugin for WordPress
+                            (formerly Varnish HTTP Purge). It lets you wipe the cache by hand whenever you need to.
                         </div>
 
                         <div class="post-nav">

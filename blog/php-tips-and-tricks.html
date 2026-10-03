@@ -11,9 +11,9 @@
 
     <!-- SEO / discoverability
     ================================================== -->
-    <meta name="description" content="A collection of practical PHP tips and tricks for writing cleaner, faster and more maintainable code, from structuring functions and methods to everyday habits.">
+    <meta name="description" content="Hands-on PHP habits for leaner, quicker, more maintainable code — smarter conditionals, cleaner functions, and day-to-day practices that actually stick.">
     <!-- meta keywords: Google no longer uses these, but Bing/Yandex and some AI agents still read them -->
-    <meta name="keywords" content="PHP tips, PHP tricks, PHP best practices, clean PHP code, PHP functions and methods, PHP development, maintainable code">
+    <meta name="keywords" content="PHP coding tips, PHP best practices, write cleaner PHP, PHP conditionals, PHP helper functions, type declarations PHP, PHP frameworks, maintainable PHP">
     <meta name="author" content="Mortaza Razavi (RazaviDev)">
     <link rel="canonical" href="https://razavidev.github.io/blog/php-tips-and-tricks.html">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -23,7 +23,7 @@
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="RazaviDev">
     <meta property="og:title" content="PHP Tips and Tricks for Cleaner, Faster Code | RazaviDev">
-    <meta property="og:description" content="A collection of practical PHP tips and tricks for writing cleaner, faster and more maintainable code, from structuring functions and methods to everyday habits.">
+    <meta property="og:description" content="Hands-on PHP habits for leaner, quicker, more maintainable code — smarter conditionals, cleaner functions, and day-to-day practices that actually stick.">
     <meta property="og:url" content="https://razavidev.github.io/blog/php-tips-and-tricks.html">
     <meta property="og:image" content="https://razavidev.github.io/images/thumbs/single/standard-1200.jpg">
     <meta property="og:image:width" content="1200">
@@ -38,7 +38,7 @@
     ================================================== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PHP Tips and Tricks for Cleaner, Faster Code | RazaviDev">
-    <meta name="twitter:description" content="A collection of practical PHP tips and tricks for writing cleaner, faster and more maintainable code, from structuring functions and methods to everyday habits.">
+    <meta name="twitter:description" content="Hands-on PHP habits for leaner, quicker, more maintainable code — smarter conditionals, cleaner functions, and day-to-day practices that actually stick.">
     <meta name="twitter:image" content="https://razavidev.github.io/images/thumbs/single/standard-1200.jpg">
     <meta name="twitter:image:alt" content="PHP Tips and Tricks">
 
@@ -53,7 +53,7 @@
       },
       "url": "https://razavidev.github.io/blog/php-tips-and-tricks.html",
       "headline": "PHP Tips and Tricks",
-      "description": "A collection of practical PHP tips and tricks for writing cleaner, faster and more maintainable code, from structuring functions and methods to everyday habits.",
+      "description": "Hands-on PHP habits for leaner, quicker, more maintainable code — smarter conditionals, cleaner functions, and day-to-day practices that actually stick.",
       "image": "https://razavidev.github.io/images/thumbs/single/standard-1200.jpg",
       "datePublished": "2024-07-27T00:00:00+00:00",
       "dateModified": "2024-07-27T00:00:00+00:00",
@@ -70,7 +70,7 @@
         "url": "https://razavidev.github.io/"
       },
       "articleSection": "Web Development",
-      "keywords": "PHP tips, PHP tricks, PHP best practices, clean PHP code, PHP functions and methods, PHP development, maintainable code",
+      "keywords": "PHP coding tips, PHP best practices, write cleaner PHP, PHP conditionals, PHP helper functions, type declarations PHP, PHP frameworks, maintainable PHP",
       "inLanguage": "en"
     }
     </script>
@@ -198,24 +198,22 @@
                     <div class="column xl-12">
                         <div class="crayons-article__body text-styles spec__body" data-article-id="636549"
                             id="article-body">
-                            <p>Working with PHP has been one of the most fun experiences for me, working on both major
-                                and minor projects and learning something new on every journey.</p>
+                            <p>Messing around with PHP has honestly been one of the highlights of my dev life —
+                                picking up something new on every project, big or small.</p>
 
-                            <p>I'll be sharing some little tricks that have helped me cut down a couple of lines of code
-                                and others that totally flipped my workflow.
+                            <p>Below are a handful of habits that helped me delete a surprising amount of boilerplate,
+                                plus a few that reshaped how I work altogether.
 
-                            Hit me up if you have any ideas, questions, comments... Without further ado, let's get
-                                into it.</p>
+                            Drop me a line if something sparks an idea or a question… and with that, let’s jump in.</p>
 
                             <h2>
                                 Tip 1: (if and else)
                             </h2>
 
-                            <p>You may have seen this before on tutorials or some other articles, but this is something
-                                really important I should mention, a bit in-depth. It's not wrong to use
-                                <code class="language-php">else</code> and <code class="language-php">else if</code> blocks in your code, in fact, they were made
-                                for use, however, in some cases, these blocks become redundant. Let's look at an
-                                example:</p>
+                            <p>This pattern shows up in tutorials everywhere, yet it deserves a closer look all the
+                                same. Reaching for <code class="language-php">else</code> and
+                                <code class="language-php">else if</code> isn’t wrong — they exist for a reason —
+                                but in certain spots they add nothing. Consider this:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -233,12 +231,12 @@
 
                             </div>
 
-                            <p>In this case the output_gender function returns a set output based on
-                                <code class="language-php">$user_is_male</code> is true or false. When <code class="language-php">return</code> is used in a
-                                function, any code below the <code class="language-php">return</code> statement is totally ignored, so, if
-                                <code class="language-php">$user_is_male</code> is true, then the <code class="language-php">else</code> block will be ignored
-                                since a value is returned. With this concept, we can get rid of the <code class="language-php">else</code>
-                                block like this:</p>
+                            <p>Here <code class="language-php">output_gender</code> picks a fixed message depending on
+                                whether <code class="language-php">$user_is_male</code> holds true. Once
+                                <code class="language-php">return</code> fires inside a function, everything beneath it
+                                never runs — so when the flag is set, the trailing <code class="language-php">else</code>
+                                is dead weight. Knowing that, we can drop the <code class="language-php">else</code>
+                                entirely:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -256,17 +254,19 @@
 
                             </div>
 
-                            <p>We know that the if statement won't run if the condition passed in is <code class="language-php">false</code>.
-                                This means it will skip straight to the "User is female" part.</p>
+                            <p>Since the condition comes back <code class="language-php">false</code>, the
+                                <code class="language-php">if</code> is skipped and execution falls straight through to
+                                the “User is female” line.</p>
 
                             <h2>
                                 Tip 2: (if blocks: less vs more)
                             </h2>
 
-                            <p>Tip 2 builds upon the tip we just looked at above but goes in a bit deeper. In an if/else
-                                or even using an example like tip 1, you might have conditions where one block, either
-                                the if or else, has less code than the other. It's better in such situations to handle
-                                the block with less code first. Let's look at a real example.</p>
+                            <p>The next idea extends what we just covered, pushing it a little further. With an
+                                if/else — or with a setup like the one above — one branch, whether the
+                                <code class="language-php">if</code> or the <code class="language-php">else</code>, often
+                                holds far less code. In those cases, deal with the shorter branch first. A concrete
+                                example makes it click.</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -288,9 +288,8 @@
 
                             </div>
 
-                            <p>This code above checks for a post category and runs a condition based on whether the
-                                category is found or not. If we're to go with <strong>ONLY</strong> tip 1, we'll have
-                                code looking like this:</p>
+                            <p>That snippet looks up a post category, then branches on whether the lookup hit. If we
+                                applied <strong>ONLY</strong> the first tip, we would end up with this shape:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -314,9 +313,10 @@
 
                             </div>
 
-                            <p>This code is correct, however, you can clearly see that our major code is wrapped with
-                                <code class="language-php">{}</code>, and pushed in further. If this code were significantly longer, it would
-                                be a pain to keep it all within the if block. Following tip 2, we can have this instead:
+                            <p>Nothing wrong with that version, except the important logic ends up nested inside
+                                <code class="language-php">{}</code> and shoved one level deeper. Stretch this pattern
+                                over a longer method and the whole thing becomes awkward to hold in your head. Tip 2
+                                suggests this instead:
                             </p>
 
                             <div class="highlight js-code-highlight">
@@ -341,17 +341,17 @@
 
                             </div>
 
-                            <p>Since the else block has less code, we use a negative statement with <code class="language-php">!</code> to
-                                make that code run first. So our if rather contains
-                                <code class="language-php">if not category, run code...</code>. This gives us more room to handle our major
-                                code freely.</p>
+                            <p>Because the short branch is the failure path, we flip it with
+                                <code class="language-php">!</code> and bail out early — an
+                                “<code class="language-php">if not category, run code...</code>” guard. The main logic
+                                then sits at the top level, free to grow.</p>
 
                             <h2>
                                 Tip 3: (verifying multiple strings)
                             </h2>
 
-                            <p>Let's just say we want to find if a certain variable is or isn't one of many strings,
-                                we'd obviously have to write a bunch of conditional statements to verify this:</p>
+                            <p>Say we need to know whether a variable matches any one of several strings — the naive
+                                route is a stack of conditions doing the checking:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -380,9 +380,10 @@
 
                             </div>
 
-                            <p>This code returns <code class="language-php">false</code> if the item variable is neither <code class="language-php">candy</code>
-                                nor <code class="language-php">toy</code>. This is perfectly correct, however, this is very repetitive.
-                                Instead, we can check an array for the string we want to find: </p>
+                            <p>The above answers <code class="language-php">false</code> whenever the value is neither
+                                <code class="language-php">candy</code> nor <code class="language-php">toy</code>. It works,
+                                but it repeats itself a lot. A tidier move is to stash the candidates in an array and
+                                search that: </p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -398,7 +399,8 @@
 
                             </div>
 
-                            <p>Even this can be shortened further because <code class="language-php">in_array</code> returns a boolean.</p>
+                            <p>That last one shrinks even more, since <code class="language-php">in_array</code> already
+                                hands back a boolean.</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -410,9 +412,9 @@
 
                             </div>
 
-                            <p>We just shortened these lines to just a single line, clean right? How does this work? We
-                                have an array containing the strings we want to check for. Then we pass that into
-                                <code class="language-php">in_array</code>. This creates a simple condition like:</p>
+                            <p>Several lines collapse into one — nice, isn’t it? The mechanism is simple: we keep the
+                                wanted strings in an array and feed it to <code class="language-php">in_array</code>,
+                                which boils down to a check like:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight plaintext"><code class="language-php">
@@ -424,8 +426,8 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>You might be wondering, why not just return whether $item is candy or toy directly since
-                                that too is just one line, like this:</p>
+                            <p>Fair question: why not simply compare <code class="language-php">$item</code> against the two
+                                values inline? That’s one line too, after all:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -437,7 +439,7 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>This will give us the same result, however let's say we were checking 10 strings:</p>
+                            <p>Same outcome — until the list grows to, say, ten strings:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -449,7 +451,7 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>You can clearly see that this easily gets out of hand, compared to this:</p>
+                            <p>That chain spirals out of control fast. The array form stays calm by comparison:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -461,15 +463,15 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p><strong>Note that the first parameter of <code class="language-php">in_array</code> is the string we're
-                                    actually checking</strong></p>
+                            <p><strong>Heads-up: the value being tested goes in as the first argument of
+                                <code class="language-php">in_array</code></strong></p>
 
                             <h2>
                                 Tip 4: (??)
                             </h2>
 
-                            <p><code class="language-php">??</code> is probably the easiest way to create inline conditions without 2 parts.
-                                What do I mean? Let's look at an example, that would do all the explaining for me.</p>
+                            <p>The <code class="language-php">??</code> operator is arguably the quickest way to write a
+                                two-sided fallback on one line. Confused? One example will clear it up.</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -487,10 +489,11 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>The last line here checks if the key <code class="language-php">c</code> in <code class="language-php">$data</code> is truthy, if
-                                not it returns "No data".</p>
+                            <p>The final line checks the <code class="language-php">c</code> key of
+                                <code class="language-php">$data</code>: use it when truthy, otherwise fall back to “No
+                                data”.</p>
 
-                            <p>We can rewrite the last line with ?? to look like this:</p>
+                            <p>The same line with <code class="language-php">??</code> reads like this:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -503,8 +506,9 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>In this case ?? behaves like the <code class="language-php">||</code> logical operator in other languages. A
-                                real-world example of this would look like this:</p>
+                            <p>Here <code class="language-php">??</code> plays the part that
+                                <code class="language-php">||</code> plays in other languages. A practical use looks
+                                like this:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -518,9 +522,10 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p><code class="language-php">getUserFromDb</code> is to return a user from a database somewhere, however, if the
-                                user isn't found, instead of setting the user variable, we break the application with
-                                <code class="language-php">trigger_error</code>. Without <code class="language-php">??</code> we'd have to write this instead:</p>
+                            <p><code class="language-php">getUserFromDb</code> is meant to pull a user out of a database —
+                                but if nobody matches, we abort with <code class="language-php">trigger_error</code>
+                                instead of assigning anything. Written longhand without
+                                <code class="language-php">??</code>, it becomes:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -541,13 +546,12 @@ if $item is inside the array holding "candy" and "toy", return true, else false
                                 Tip 5: (Recursiveness over repetition)
                             </h2>
 
-                            <p>I think this tip is pretty straightforward, try to use recursiveness rather than
-                                repeating yourself a lot. There are situations that'll make you repeat some code, that's
-                                fine, but if you find you're repeating the same code, just make it a method. Where does
-                                recursiveness come in? Let's look at an example: This is a method I wrote for my <a
+                            <p>This one speaks for itself: reach for recursion instead of copy-pasted code. Some
+                                duplication is harmless, but when the same chunk keeps reappearing, turn it into a
+                                method that calls itself where it fits. A real example — a getter I wrote for my <a
                                     href="https://leafphp.netlify.app/#/" target="_blank" rel="noopener noreferrer">Leaf
-                                    framework</a>'s request object, to return a particular field passed into the
-                                request.</p>
+                                    framework</a> request object, which fetches one field (or several) from the
+                                incoming request:</p>
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
 
@@ -567,10 +571,9 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>This means that this method can take in either an array or string and based on the input,
-                                it would return a string or an array. The solution would be to check if the input was an
-                                array, loop over it to get the strings in the array then perform the data fetch on those
-                                strings, which would look like this.</p>
+                            <p>So the method accepts a string or an array, then answers with a single value or a
+                                collection accordingly. The straightforward version tests for an array, walks it, pulls
+                                each key, and looks a lot like this:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -591,10 +594,9 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>Here, you notice <code class="language-php">$this-&gt;body($safeData)[$params] ?? null</code> is being
-                                repeated, not just that, but what if an array holding another array is passed in
-                                instead. Since this is a library, there's no telling what sorts of things users would
-                                pass in there, so I did this instead.</p>
+                            <p>Notice the repeated <code class="language-php">$this-&gt;body($safeData)[$params] ?? null</code>
+                                — and worse, a nested array would sail straight past this logic. Since this ships as a
+                                library, callers can throw anything at it, so I went recursive instead:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -615,16 +617,16 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>This makes sure that until the looped value is a string, it won't attempt to fetch its
-                                data. A small trick compared to those above, but definitely useful. <strong>Note that
-                                    this function is class scoped, hence the use of <code class="language-php">$this</code></strong></p>
+                            <p>Now nothing is fetched until the current element is actually a string — a small change
+                                with real payoff. <strong>Keep in mind the method lives on a class, which is why
+                                    <code class="language-php">$this</code> shows up</strong></p>
 
                             <h2>
                                 Tip 6: (PHP + HTML)
                             </h2>
 
-                            <p>This is for when you want to write PHP in your HTML or HTML in your PHP😅. We'd usually
-                                do something like:</p>
+                            <p>For those moments you’re blending PHP with HTML — or the reverse 😅 — the default
+                                instinct looks like this:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -644,9 +646,9 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>Although this is fine, you can clearly see, we're outputting the HTML as a string. The
-                                bulkier the HTML, the more stressful it becomes to match tags and keep track of exactly
-                                what part of the HTML we're writing is. There's a neat solution for this.</p>
+                            <p>It runs, but all that HTML is trapped inside a string — and the bigger the markup
+                                grows, the harder it is to match tags or tell which part you’re editing. Luckily there’s
+                                a cleaner way.</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -662,10 +664,9 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>You can clearly see how we're maintaining our HTML formatting and code alignment...and
-                                no, this is not a templating engine, this is just PHP making things simple for us. One
-                                major thing about PHP is how it allows the same thing to be done in many different ways.
-                                In this example above, we're using:</p>
+                            <p>Indentation and markup survive intact — and no, that isn’t a templating engine, it’s
+                                plain PHP being helpful. Flexibility like this is PHP’s trademark: one job, many valid
+                                spellings. The snippet above leans on:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -694,12 +695,11 @@ if $item is inside the array holding "candy" and "toy", return true, else false
                                 Tip 7: (Writing functional blocks)
                             </h2>
 
-                            <p>Functional blocks can range from a large feature to a single lined wrapper, around a
-                                default PHP function, the point is just to create that functional block. This isn't just
-                                to avoid repetition, but also to speed up your workflow and make your code more
-                                readable.</p>
+                            <p>Those helpers can wrap anything from a full-blown feature down to a one-line alias for
+                                a built-in. Beyond killing repetition, they streamline your workflow and read better,
+                                too.</p>
 
-                            <p>You can write a simple method to create a redirect like this:</p>
+                            <p>A redirect helper built that way looks like this:</p>
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
 
@@ -712,9 +712,10 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>So instead of writing <code class="language-php">header("location: /home", true, 302)</code> everytime, it
-                                makes more sense to write <code class="language-php">redirectTo("/home")</code>. The same applies to 3rd
-                                party libraries, and long processes, writing a reusable block of code in an open way eg:
+                            <p>From then on, <code class="language-php">redirectTo("/home")</code> reads far better
+                                than spelling out <code class="language-php">header("location: /home", true, 302)</code>
+                                everywhere. The same thinking covers third-party SDK calls and drawn-out processes:
+                                expose one tidy, reusable entry point, for instance:
                             </p>
 
                             <div class="highlight js-code-highlight">
@@ -727,22 +728,20 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>is obviously better than writing a bunch of lines every time you have to send a
-                                notification to a user. Another very small but very useful tip.</p>
+                            <p>— clearly nicer than pasting a dozen lines wherever a user needs notifying. Tiny habit,
+                                big win.</p>
 
                             <h2>
                                 Tip 8: (Using Types)
                             </h2>
 
-                            <p>Another straightforward one. This is one of the least used, but very powerful features
-                                available in PHP. This is a feature that can save you and other developers a whole lot
-                                of stress (if you work with a team).</p>
+                            <p>One more plain-spoken one. Type declarations sit among PHP’s most underused — yet
+                                most protective — tools, and they spare whole teams (yourself included) a lot of grief.</p>
 
-                            <p>Of course, you can write function descriptions like the example in tip 5 above, but it
-                                becomes quite a daunting task to write function descriptions for all your functions and
-                                variables in a large project.</p>
+                            <p>Sure, doc comments like the one in tip 5 help, but hand-writing them for every function
+                                and variable across a big codebase quickly turns into a chore.</p>
 
-                            <p>Let's take a look at how types can save our lives later:</p>
+                            <p>Here’s the kind of slow-burning bug that types prevent:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -758,16 +757,15 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>If a different developer works on the project or even yourself after a few weeks, seeing
-                                the <code class="language-php">getItem</code> method, the <code class="language-php">$item</code> variable there is obviously
-                                expected to be a string, but the function was written to handle an array.</p>
+                            <p>Come back to <code class="language-php">getItem</code> in a few weeks — alone or with
+                                teammates — and the bare <code class="language-php">$item</code> parameter tells you
+                                nothing. It looks like it wants a string, yet the body indexes it like an array.</p>
 
-                            <p>The dangerous thing here is that passing in a string won't break the app, it would still
-                                run perfectly. Why?</p>
+                            <p>The nasty part: handing it a string doesn’t crash outright. Ever wonder why not?</p>
 
-                            <p>If "chair" is passed into the function, it will be evaluated to
-                                <code class="language-php">allItems()["c"]</code>, which will end up causing errors that will keep you up at
-                                12am😅. This can easily be avoided like this:</p>
+                            <p>Pass <code class="language-php">"chair"</code> and PHP happily resolves
+                                <code class="language-php">allItems()["c"]</code> — a mystery error waiting to ruin a
+                                night 😅. One word fixes it:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -781,11 +779,12 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>This will make sure that whatever is passed in here is the type needed. You can read more
-                                from php.net</p>
+                            <p>Now only the right type gets through the door. The PHP manual covers the rest in
+                                depth — worth a read over at php.net.</p>
 
-                            <p>You can also use methods like <code class="language-php">is_string</code> and <code class="language-php">is_array</code> which we
-                                saw above like this:</p>
+                            <p>Runtime guards such as <code class="language-php">is_string</code> and
+                                <code class="language-php">is_array</code> — the same ones we used earlier — work as an
+                                alternative:</p>
 
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
@@ -804,48 +803,41 @@ if $item is inside the array holding "candy" and "toy", return true, else false
                                 Tip 9: (Frameworks/Libraries aren't evil)
                             </h2>
 
-                            <p>I'll be real over here, open-source libraries cause problems! Sometimes the libraries we
-                                bring in cause more problems for us instead of helping us. This might sound like I'm
-                                totally trashing open source packages, I'm not, I also write open-source packages
-                                myself, so obviously not!</p>
+                            <p>Straight talk: third-party packages can bite. Every now and then a dependency creates
+                                more headaches than it solves. Before anyone accuses me of hating on open source —
+                                relax, I publish packages myself, so that’s hardly it!</p>
 
-                            <p>My point is that you should read more on packages you bring in, read their documentation,
-                                check their issues on GitHub, don't take unnecessary risks. One thing I'll advise, and
-                                that goes back to <strong>Tip 7</strong>, write wrappers for features around the
-                                packages you bring in. This will give you a bit more control and also make your code
-                                cleaner.</p>
+                            <p>The real advice: vet what you install. Skim the docs, scan the GitHub issues, and skip
+                                needless gambles. And circling back to <strong>Tip 7</strong>, wrap the features you
+                                borrow in your own thin layer. You keep more control, and the codebase stays tidy.</p>
 
-                            <p>In regards to frameworks, you might have heard this before, but you should familiarize
-                                yourself with PHP first. PHP frameworks, no matter the language they were written in
-                                still use PHP's principles and style, so the first step is to obviously familiarize
-                                yourself with PHP.</p>
+                            <p>On frameworks, the old wisdom still holds: learn PHP itself first. Every PHP framework,
+                                whatever its flavor, leans on the language’s core habits and idioms, so fluency with
+                                vanilla PHP comes before anything else.</p>
 
-                            <p>Next would be to pick something you're comfortable with and stick to it. There are many
-                                choices out there:</p>
+                            <p>After that, settle on one stack you enjoy and commit to it. Plenty of solid options
+                                exist:</p>
 
                             <ul>
-                                <li>Laravel: if you love magic, laravel does literally everything for you (unless you
-                                    decide otherwise)</li>
-                                <li>Slim: A rest API framework, has a sort of "bring your own" vibe</li>
-                                <li>Leaf: That's what I wrote, inspired by Slim and Laravel, it gives you the magic you
-                                    can control.</li>
+                                <li>Laravel: maximal magic — it happily does almost everything unless you say otherwise</li>
+                                <li>Slim: a REST API toolkit with a “bring your own pieces” feel</li>
+                                <li>Leaf: my own project, borrowing from Slim and Laravel — magic, but the kind you can
+                                    steer.</li>
                             </ul>
 
-                            <p><em>I only mentioned frameworks I actually use to avoid bias.</em></p>
+                            <p><em>I’ve only listed frameworks I use day to day, so nobody can accuse me of bias.</em></p>
                             <h2>
                                 Tip 10: (Don't just code!)
                             </h2>
 
-                            <p>Alright, this one is a bonus tip. It applies to not just PHP, but technically almost
-                                every language/framework you work with. What I mean by don't just code is relatively
-                                straightforward.</p>
+                            <p>One last bonus, and it travels well beyond PHP. “Don’t just code” sounds odd, but the
+                                meaning is simple.</p>
 
-                            <p>Let's say you want to write a method that sort of requests a payment from a user's
-                                account, jumping straight into coding out this feature may (or may not) end up getting
-                                you confused at some point, where you'll have to stop, scroll back up, check something
-                                from a file somewhere, or something similar.</p>
+                            <p>Picture a method that pulls a payout from someone’s balance. Dive straight into the
+                                implementation and sooner or later you’ll stall — scrolling back, re-checking another
+                                file, losing the thread.</p>
 
-                            <p>What am I proposing? Here:</p>
+                            <p>My alternative? Sketch it out first:</p>
                             <div class="highlight js-code-highlight">
                                 <pre class="highlight php"><code class="language-php">
 
@@ -870,22 +862,20 @@ if $item is inside the array holding "candy" and "toy", return true, else false
 
                             </div>
 
-                            <p>The above just allows you to do all the required thinking before actually jumping in to
-                                write any features. It also in a way helps you cross-check what you're building since
-                                you'll end up listing out all your processes out first.</p>
+                            <p>That outline forces the thinking up front, before any real code exists. It also doubles
+                                as a checklist: every step of the process is already on the page, waiting to be
+                                verified.</p>
 
                             <h3>
                                 Thanks for reading
                             </h3>
 
-                            <p>These are a few tips and tricks I've discovered on my PHP journey, some of these might
-                                work for you and others may not, feel free to choose whichever you're comfortable with
-                                and stick to those.</p>
+                            <p>That’s a wrap on the habits I’ve picked up writing PHP — take what clicks, leave what
+                                doesn’t, and build your own shortlist of favorites.</p>
 
-                            <p>It's quite wrong to say these are good ways of doing stuff so use these only, as I
-                                mentioned before, PHP is the type of language that provides many different ways of doing
-                                the same thing, so if you have anything you'll like to share, a new tip, a faster way to
-                                do something I mentioned, something you don't agree with, just reach out to me.</p>
+                            <p>No single style owns the truth here, and PHP especially rewards experimentation, so if
+                                you’ve got a sharper approach, a missing trick, or a friendly disagreement, I’d love to
+                                hear it — just get in touch.</p>
 
 
                         </div>

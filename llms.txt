@@ -13,12 +13,12 @@ RazaviDev covers full stack software engineering: frontend (React, Next.js, Vue,
 
 ## Blog posts
 
-- [How to Manage Your Time as a Software Engineer](https://razavidev.github.io/blog/how-to-manage-your-time-as-a-software-engineer.html): Productivity, deep work and the maker vs manager schedule for engineers (2023-12-15).
-- [Lets Optimize a WordPress Website](https://razavidev.github.io/blog/lets-optimize-a-wordpress-website.html): Practical WordPress performance, plugin and caching guide (2024-02-09).
-- [PHP Tips and Tricks](https://razavidev.github.io/blog/php-tips-and-tricks.html): Clean, maintainable PHP practices and everyday tips (2024-07-27).
-- [Technical SEO and its Benefits](https://razavidev.github.io/blog/technical-seo-and-its-benefits.html): Speed, schema and crawlability for better search visibility (2024-08-11).
-- [Understanding Digital Marketing](https://razavidev.github.io/blog/understanding-digital-marketing.html): How digital marketing channels work together (2024-11-15).
-- [What is FileZilla?](https://razavidev.github.io/blog/what-is-filezilla.html): Introduction to the FileZilla FTP / FTPS / SFTP client (2025-01-07).
+- [How to Manage Your Time as a Software Engineer](https://razavidev.github.io/blog/how-to-manage-your-time-as-a-software-engineer.html): Five time-management methods for remote engineers, from the Pomodoro Method to the maker vs manager schedule (2023-12-15).
+- [Lets Optimize a WordPress Website](https://razavidev.github.io/blog/lets-optimize-a-wordpress-website.html): Hands-on WordPress speed guide covering updates, plugins, images and caching (2024-02-09).
+- [PHP Tips and Tricks](https://razavidev.github.io/blog/php-tips-and-tricks.html): Leaner, more maintainable PHP habits for everyday coding (2024-07-27).
+- [Technical SEO and its Benefits](https://razavidev.github.io/blog/technical-seo-and-its-benefits.html): How site speed, structure, schema and crawlability grow organic visibility (2024-08-11).
+- [Understanding Digital Marketing](https://razavidev.github.io/blog/understanding-digital-marketing.html): A tour of digital channels and how they win customers together (2024-11-15).
+- [What is FileZilla?](https://razavidev.github.io/blog/what-is-filezilla.html): A concise overview of the free FileZilla FTP / FTPS / SFTP app (2025-01-07).
 
 ## Optional
 
