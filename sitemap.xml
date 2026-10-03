@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  XML sitemap for https://razavidev.github.io/
+  Advertised automatically via https://razavidev.github.io/robots.txt
+
+  - Every URL below is a canonical, absolute (fully-qualified) URL.
+  - <lastmod> reflects the true last modification of that page's content.
+    Blog posts use their publication date; static pages use the date the
+    page content was last changed.
+  - <changefreq> and <priority> are intentionally omitted: Google and Bing
+    both ignore them, so they would only add noise.
+  - "single.html" is intentionally NOT listed: it is an unused, orphaned
+    template/demo page with placeholder content.
+  - Limits (50,000 URLs / 50 MB uncompressed) are far from being reached.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Home -->
+    <url>
+        <loc>https://razavidev.github.io/</loc>
+        <lastmod>2026-04-02</lastmod>
+    </url>
+
+    <!-- Main pages -->
+    <url>
+        <loc>https://razavidev.github.io/about.html</loc>
+        <lastmod>2025-07-27</lastmod>
+    </url>
+    <url>
+        <loc>https://razavidev.github.io/blog.html</loc>
+        <lastmod>2025-07-27</lastmod>
+    </url>
+    <url>
+        <loc>https://razavidev.github.io/contact.html</loc>
+        <lastmod>2025-07-27</lastmod>
+    </url>
+
+    <!-- Blog posts -->
+    <url>
+        <loc>https://razavidev.github.io/blog/how-to-manage-your-time-as-a-software-engineer.html</loc>
+        <lastmod>2023-12-15</lastmod>
+    </url>
+    <url>
+        <loc>https://razavidev.github.io/blog/lets-optimize-a-wordpress-website.html</loc>
+        <lastmod>2024-02-09</lastmod>
+    </url>
+    <url>
+        <loc>https://razavidev.github.io/blog/php-tips-and-tricks.html</loc>
+        <lastmod>2024-07-27</lastmod>
+    </url>
+    <url>
+        <loc>https://razavidev.github.io/blog/technical-seo-and-its-benefits.html</loc>
+        <lastmod>2024-08-11</lastmod>
+    </url>
+    <url>
+        <loc>https://razavidev.github.io/blog/understanding-digital-marketing.html</loc>
+        <lastmod>2024-11-15</lastmod>
+    </url>
+    <url>
+        <loc>https://razavidev.github.io/blog/what-is-filezilla.html</loc>
+        <lastmod>2025-01-07</lastmod>
+    </url>
+
+</urlset>

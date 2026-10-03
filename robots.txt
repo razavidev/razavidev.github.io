@@ -1,0 +1,181 @@
+# robots.txt  -  https://razavidev.github.io/robots.txt
+# ===========================================================================
+# Site:         RazaviDev  -  Full Stack Software Engineer
+# URL:          https://razavidev.github.io/
+# Owner:        M. Razavi  (mr.razavidev@gmail.com)
+#
+# Intent:       MAXIMUM discoverability and crawlability.
+#               Nothing on this site is blocked. Every legitimate search
+#               engine, AI/LLM crawler and autonomous agent is explicitly
+#               welcome to crawl, index and cite this content.
+# Last update:  2026-10-03
+#
+# How to read this file
+#   * robots.txt only manages AUTOMATED crawling. There are NO "Disallow"
+#     rules here, so every crawler (even ones not named below) may crawl
+#     everything by default via the "*" rule.
+#   * The explicit "Allow: /" groups below are deliberate: they document
+#     intent and explicitly confirm the publisher's choice for the AI
+#     "control tokens" (Google-Extended, Applebot-Extended) that Google and
+#     Apple provide to opt in/out of AI training + grounding.
+#   * No Crawl-delay is set anywhere, so nothing throttles crawl speed.
+#   * The sitemap is advertised at the bottom of this file.
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+# 1. Global default  -  allow absolutely everything
+# ---------------------------------------------------------------------------
+User-agent: *
+Allow: /
+
+# ---------------------------------------------------------------------------
+# 2. Search engine crawlers
+# ---------------------------------------------------------------------------
+
+# Google  (Search, Images, Video, News, Discover)
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-Video
+User-agent: Googlebot-News
+User-agent: Storebot-Google
+User-agent: Google-InspectionTool
+User-agent: GoogleOther
+User-agent: GoogleOther-Image
+User-agent: GoogleOther-Video
+Allow: /
+
+# Google product fetchers / utilities
+User-agent: Google-Read-Aloud
+User-agent: Feedfetcher-Google
+User-agent: APIs-Google
+User-agent: Google-CloudVertexBot
+User-agent: Google-Site-Verification
+Allow: /
+
+# Microsoft / Bing  (Bing Search, Copilot, previews, ads)
+User-agent: bingbot
+User-agent: msnbot
+User-agent: msnbot-media
+User-agent: BingPreview
+User-agent: BingVideoPreview
+User-agent: AdIdxBot
+User-agent: MicrosoftPreview
+User-agent: AzureAI-SearchBot
+Allow: /
+
+# Apple Search  (Spotlight, Siri, Safari)
+User-agent: Applebot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+User-agent: DuckAssistBot
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+User-agent: YandexImages
+User-agent: YandexAdditional
+Allow: /
+
+# Baidu
+User-agent: Baiduspider
+User-agent: Baiduspider-image
+Allow: /
+
+# Other global search engines
+User-agent: Sogou
+User-agent: Sogou web spider
+User-agent: Sogou Pic Spider
+User-agent: Slurp
+User-agent: SeznamBot
+User-agent: Yeti
+User-agent: NaverBot
+User-agent: Qwantify
+User-agent: PetalBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# 3. AI / LLM crawlers, assistants and agents
+# ---------------------------------------------------------------------------
+
+# OpenAI / ChatGPT
+#   GPTBot        - model training
+#   OAI-SearchBot - surfaces sites in ChatGPT search
+#   ChatGPT-User  - user-initiated fetches
+#   OAI-AdsBot    - ChatGPT ads landing-page validation
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: OAI-AdsBot
+Allow: /
+
+# Anthropic / Claude
+#   ClaudeBot       - model training
+#   Claude-SearchBot- improves search result quality
+#   Claude-User     - user-initiated fetches
+#   Claude-Web / anthropic-ai - legacy tokens
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Claude-Web
+User-agent: anthropic-ai
+Allow: /
+
+# Google Gemini / Vertex AI  -  explicit OPT IN to AI training AND grounding
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence  -  explicit OPT IN to Apple foundation models
+User-agent: Applebot-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# Common Crawl  -  open dataset used to train many LLMs
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+User-agent: meta-externalfetcher
+User-agent: FacebookBot
+User-agent: facebookexternalhit
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# ByteDance / TikTok
+User-agent: Bytespider
+User-agent: TikTokSpider
+Allow: /
+
+# Other AI / LLM / research crawlers and agents
+User-agent: AI2Bot
+User-agent: Ai2Bot-Dolma
+User-agent: Bravebot
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: Diffbot
+User-agent: ExaBot
+User-agent: ImagesiftBot
+User-agent: MistralAI-User
+User-agent: omgilibot
+User-agent: TavilyBot
+User-agent: Timpibot
+User-agent: YouBot
+User-agent: iaskspider
+Allow: /
+
+# ---------------------------------------------------------------------------
+# 4. Sitemap + machine-readable summary
+# ---------------------------------------------------------------------------
+Sitemap: https://razavidev.github.io/sitemap.xml
+
+# Markdown summary of the whole site for AI agents / assistants (llms.txt):
+# https://razavidev.github.io/llms.txt

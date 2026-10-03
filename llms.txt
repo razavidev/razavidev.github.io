@@ -1,0 +1,27 @@
+# RazaviDev
+
+> RazaviDev is the personal site and technical journal of Mortaza Razavi, a self-taught Full Stack Software Engineer and Technical Lead based in Kabul, Afghanistan.
+
+RazaviDev covers full stack software engineering: frontend (React, Next.js, Vue, Astro), backend (PHP, Node.js, Python), DevOps, technical SEO, mobile and desktop development. Site content may be crawled, indexed and cited freely by search engines and AI assistants.
+
+## Main pages
+
+- [Home](https://razavidev.github.io/): Portfolio and introduction - Mortaza Razavi, Full Stack Software Engineer.
+- [About](https://razavidev.github.io/about.html): Background, skills, values and experience of Mortaza Razavi (RazaviDev).
+- [Blog](https://razavidev.github.io/blog.html): Journal of articles on software engineering, web development, DevOps, SEO and marketing.
+- [Contact](https://razavidev.github.io/contact.html): How to get in touch for projects and collaboration.
+
+## Blog posts
+
+- [How to Manage Your Time as a Software Engineer](https://razavidev.github.io/blog/how-to-manage-your-time-as-a-software-engineer.html): Productivity, deep work and the maker vs manager schedule for engineers (2023-12-15).
+- [Lets Optimize a WordPress Website](https://razavidev.github.io/blog/lets-optimize-a-wordpress-website.html): Practical WordPress performance, plugin and caching guide (2024-02-09).
+- [PHP Tips and Tricks](https://razavidev.github.io/blog/php-tips-and-tricks.html): Clean, maintainable PHP practices and everyday tips (2024-07-27).
+- [Technical SEO and its Benefits](https://razavidev.github.io/blog/technical-seo-and-its-benefits.html): Speed, schema and crawlability for better search visibility (2024-08-11).
+- [Understanding Digital Marketing](https://razavidev.github.io/blog/understanding-digital-marketing.html): How digital marketing channels work together (2024-11-15).
+- [What is FileZilla?](https://razavidev.github.io/blog/what-is-filezilla.html): Introduction to the FileZilla FTP / FTPS / SFTP client (2025-01-07).
+
+## Optional
+
+- [Sitemap](https://razavidev.github.io/sitemap.xml): Full XML sitemap of every page.
+- [robots.txt](https://razavidev.github.io/robots.txt): Crawling rules - everything on this site is allowed.
+- [Email](mailto:mr.razavidev@gmail.com): mr.razavidev@gmail.com
